@@ -52,6 +52,7 @@ def load_mint_contract():
 
     mint_contract_address = os.getenv("MINT_TOKEN_ADDRESS")
     with open(Path('./compiled_contracts/in_app_coin_abi.json')) as f:
+        mint_abi = json.load(f)
         
     # 1. Load MintToken contract
     mint_contract = w3.eth.contract(
